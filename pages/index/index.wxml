@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="main">
+  <custom-note wx-if="{{activeTabIndex === 0}}" note-list="{{noteList}}" binddelete="onDelete"></custom-note>
+
+  <custom-gua wx-if="{{activeTabIndex === 1}}" gua-list="{{guaList}}"></custom-gua>
+
+  <custom-user wx-if="{{activeTabIndex === 2}}" bindadd="addReply"></custom-user>
+
+  <mp-tabbar 
+    ext-class="tab-bar"
+    list="{{tabbarList}}" 
+    bindchange="tabbarChange">
+  </mp-tabbar>
+</view>

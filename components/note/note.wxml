@@ -1,0 +1,48 @@
+<!--components/note/note.wxml-->
+<view class="note">
+	<!-- 轮播图 -->
+	<swiper class="banner" autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}">
+		<swiper-item wx:for="{{bannerList}}" wx:for-index="idx" wx:key="idx" wx:for-item="item">
+			<image src="{{item}}" class="banner-item" data-index="{{idx}}" bindtap="showGallary"></image>
+		</swiper-item>
+	</swiper>
+	<!-- 轮播图 -->
+	<!-- 笔记列表 -->
+  <view class="title">
+    笔记列表
+    <text class="desc">(左滑选择查看)</text>
+    <mp-icon
+      type="field"
+      icon="add2"
+      size="20"
+      color="#3ba9f6"
+      bindtap="addNote"
+    ></mp-icon>
+  </view>
+	<view class="note-list" wx:if="{{noteList.length > 0}}">
+		<view class="weui-cells">
+			<mp-slideview
+        ext-class="custom-silder" 
+        wx:for="{{noteList}}" 
+        wx:for-index="idx" 
+        wx:key="idx" 
+        wx:for-item="note" 
+        buttons="{{slideButtons}}" 
+        bindbuttontap="slideButtonTap"
+        data-title="{{note.title}}"
+        data-content="{{note.content}}"
+        data-id="{{note.id}}"
+      >
+				<mp-cell
+          value="{{note.title}}" 
+          footer="{{note.date}}" 
+          bindtap="goToView"
+          data-title="{{note.title}}"
+          data-content="{{note.content}}"
+          data-id="{{note.id}}"
+        ></mp-cell>
+			</mp-slideview>
+		</view>
+	</view>
+	<!-- 笔记列表 -->
+</view>

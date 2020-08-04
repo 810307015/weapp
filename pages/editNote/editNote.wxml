@@ -1,0 +1,16 @@
+<!--pages/editNote/editNote.wxml-->
+<view class="edit-note">
+  <view class="row">
+    <view class="label">
+      标题
+    </view>
+    <input disabled="{{status === 0}}" type="text" data-field="title" bindinput="handleChange" name="title" value="{{title}}" />
+  </view>
+  <view class="row">
+    <view class="label">
+      内容
+    </view>
+    <textarea maxlength="-1" disabled="{{status === 0}}" name="content" data-field="content" bindinput="handleChange" value="{{content}}" />
+  </view>
+  <button wx:if="{{status !== 0}}" type="primary" bindtap="save">保存</button>
+</view>

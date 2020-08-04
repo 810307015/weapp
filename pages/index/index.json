@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mp-gallery": "weui-miniprogram/gallery/gallery",
+    "mp-tabbar": "weui-miniprogram/tabbar/tabbar",
+    "custom-note": "/components/note/note",
+    "custom-user": "/components/user/user",
+    "custom-gua": "/components/gua/gua"
+  },
+  "navigationStyle": "custom"
+}

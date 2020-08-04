@@ -1,0 +1,33 @@
+/* components/note/note.wxss */
+.note {
+  color: #333333;
+}
+
+.note .banner {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.note .banner-item {
+  width: 100%;
+}
+
+.note .title {
+  display: flex;
+  align-items: center;
+  padding: 32rpx;
+}
+
+.note .desc {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.note .note-list {
+  height: 720rpx;
+  overflow-y: auto;
+}
+
+.note .weui-cell {
+  border-bottom: 2rpx solid #EEEEEE;
+}

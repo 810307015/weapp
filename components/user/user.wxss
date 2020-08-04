@@ -1,0 +1,44 @@
+/* components/user/user.wxss */
+
+.user .top {
+  display: flex;
+  align-items: center;
+  padding: 120rpx 32rpx 32rpx;
+  background-color: #3ba9f6;
+}
+
+.user .headpic {
+  flex-shrink: 0;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user .nickname {
+  margin-left: 16rpx;
+  color: #FFFFFF;
+}
+
+.user .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.user .modal .content {
+  position: absolute;
+  width: 600rpx;
+  background-color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  padding: 30rpx;
+  transform: translate(-50%, -50%);
+}
+
+.user .row textarea {
+  margin-top: 20rpx;
+}

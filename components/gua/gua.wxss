@@ -1,0 +1,88 @@
+.gua {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f8f8f8;
+  padding-top: 180rpx;
+  min-height: 1000rpx;
+}
+
+.gua .taiji {
+  position: relative;
+  display: flex;
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.animate-rotate {
+  animation: rotate360 0.3s linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.gua .taiji .yin,
+.gua .taiji .yang {
+  width: 300rpx;
+  height: 600rpx;
+}
+
+.gua .taiji .yin {
+  border-radius: 300rpx 0 0 300rpx;
+  background-color: #000000;
+}
+
+.gua .taiji .yang {
+  border-radius: 0 300rpx 300rpx 0;
+  background-color: #FFFFFF;
+}
+
+.gua .taiji .little-yin,
+.gua .taiji .little-yang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 150rpx;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+}
+
+.gua .taiji .little-yin {
+  top: 0;
+  background: #000000;
+}
+
+.gua .taiji .little-yang {
+  bottom: 0;
+  background: #FFFFFF;
+}
+
+.gua .taiji .little-yin-1,
+.gua .taiji .little-yang-1 {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.gua .taiji .little-yin-1 {
+  background: #000000;
+}
+
+.gua .taiji .little-yang-1 {
+  background: #FFFFFF;
+}
+
+.gua .content {
+  padding: 30rpx;
+  margin-top: 30rpx;
+  line-height: 1.5;
+}
+

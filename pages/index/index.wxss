@@ -1,0 +1,20 @@
+.main .top-bg {
+  width: 750rpx;
+}
+
+.main .tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.main .tab-bar .tabbar--weui-tabbar__item.tabbar--weui-bar__item_on .tabbar--weui-tabbar__label {
+  color: #3ba9f6;
+  
+}
+
+.main .tab-bar .tabbar--weui-tabbar__item.tabbar--weui-bar__item_on:nth-child(2) .tabbar--weui-tabbar__label {
+  color: #e8525f;
+}

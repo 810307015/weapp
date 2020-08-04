@@ -1,0 +1,30 @@
+<!--components/gua/gua.wxml-->
+<view class="gua">
+  <view class="taiji {{isActive ? 'animate-rotate' : ''}}" bindtap="start">
+    <view class="yin">
+      <view class="little-yang">
+        <view class="little-yin-1">
+        </view>
+      </view>
+    </view>
+    <view class="yang">
+      <view class="little-yin">
+        <view class="little-yang-1">
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="title" wx:if="{{activeIndex !== -1}}">
+      当前卦象: {{ guaList[activeIndex].name }}
+    </view>
+
+    <view class="describe">
+      {{ guaList[activeIndex].describe }}
+    </view>
+      
+      
+  </view>
+    
+</view>
