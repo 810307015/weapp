@@ -1,0 +1,20 @@
+<!--components/zhouyi/zhouyi.wxml-->
+<view class="zhouyi">
+  <view class="space">
+  </view>
+  <input type="text" confirm-type="search" class="search" bindinput="search" placeholder="输入卦名进行搜索过滤"></input>
+  <view class="list">
+    <view 
+      class="item" 
+      wx:for="{{list}}"
+      wx:for-index="idx"
+      wx:for-item="gua"
+      wx:key="idx"
+      id="gua-{{idx}}"
+    >
+      <view class="index">周易第{{idx + 1}}卦</view>
+      <view class="name">{{gua.name}}</view>
+      <view class="describe">象辞：{{gua.describe}}</view>
+    </view>
+  </view>
+</view>

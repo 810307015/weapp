@@ -4,7 +4,7 @@
     "mp-tabbar": "weui-miniprogram/tabbar/tabbar",
     "custom-note": "/components/note/note",
     "custom-user": "/components/user/user",
-    "custom-gua": "/components/gua/gua"
-  },
-  "navigationStyle": "custom"
+    "custom-gua": "/components/gua/gua",
+    "custom-zhouyi": "/components/zhouyi/zhouyi"
+  }
 }

@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="main">
-  <custom-note wx-if="{{activeTabIndex === 0}}" note-list="{{noteList}}" binddelete="onDelete"></custom-note>
+  <!-- <custom-note wx-if="{{activeTabIndex === 0}}" note-list="{{noteList}}" binddelete="onDelete"></custom-note> -->
+  <custom-zhouyi wx-if="{{activeTabIndex === 0}}" gua-list="{{guaList}}"></custom-zhouyi>
 
   <custom-gua wx-if="{{activeTabIndex === 1}}" gua-list="{{guaList}}"></custom-gua>
 

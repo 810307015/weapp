@@ -5,8 +5,14 @@ const app = getApp()
 Page({
   data: {
     activeTabIndex: 0, // 当前的tab页
-    tabbarList: [{
-        'text': '笔记',
+    tabbarList: [
+      // {
+      //   'text': '笔记',
+      //   'iconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note.png',
+      //   'selectedIconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note_active.png'
+      // },
+      {
+        'text': '周易',
         'iconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note.png',
         'selectedIconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note_active.png'
       },
@@ -102,10 +108,17 @@ Page({
     })
   },
   addReply: function (e) {
-    const { content } = e.detail;
+    const { content = '' } = e.detail;
     const app = getApp();
     const { openid } = app.globalData;
     console.log(content);
+    if(!content.trim()) {
+      wx.showToast({
+        icon: 'none',
+        title: '请输入反馈内容',
+      })
+      return;
+    }
     wx.showLoading({
       title: '提交反馈中...',
     })

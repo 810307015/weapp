@@ -3,7 +3,7 @@
 .user .top {
   display: flex;
   align-items: center;
-  padding: 120rpx 32rpx 32rpx;
+  padding: 60rpx 32rpx;
   background-color: #3ba9f6;
 }
 
