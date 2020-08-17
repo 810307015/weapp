@@ -158,6 +158,10 @@ Page({
   },
   onLoad: function () {
     this.getGuaList();
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   },
   onShow: function() {
     const app = getApp();
