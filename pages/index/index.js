@@ -156,6 +156,11 @@ Page({
       }
     })
   },
+  goToWeight: function() {
+    wx.navigateTo({
+      url: '/pages/weightPage/weightPage',
+    })
+  },
   onLoad: function () {
     this.getGuaList();
     wx.showShareMenu({

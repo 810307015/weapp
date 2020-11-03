@@ -1,0 +1,60 @@
+/* pages/weightPage/weightPage.wxss */
+.weight-container {
+  padding: 32rpx;
+}
+
+.weight-container .header {
+  font-weight: bold;
+  font-size: 38rpx;
+  text-align: center;
+}
+
+.weight-container .row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+}
+
+.weight-container .row .name {
+  flex: 1;
+}
+
+.weight-container .row .range,
+.weight-container .row .time {
+  flex: 2;
+}
+
+.weight-container  .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.weight-container  .modal .content {
+  position: absolute;
+  width: 600rpx;
+  background-color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  padding: 30rpx;
+  transform: translate(-50%, -50%);
+}
+
+.weight-container .form-item {
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+}
+
+.weight-container .form-item .label {
+  flex: 0 0 150rpx;
+}
+
+.weight-container  .modal .content button {
+  margin-top: 40rpx;
+}

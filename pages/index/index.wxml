@@ -5,7 +5,7 @@
 
   <custom-gua wx-if="{{activeTabIndex === 1}}" gua-list="{{guaList}}"></custom-gua>
 
-  <custom-user wx-if="{{activeTabIndex === 2}}" bindadd="addReply"></custom-user>
+  <custom-user wx-if="{{activeTabIndex === 2}}" bindadd="addReply" bindweight="goToWeight"></custom-user>
 
   <mp-tabbar 
     ext-class="tab-bar"

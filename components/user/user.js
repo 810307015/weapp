@@ -4,7 +4,6 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
   },
 
   /**
@@ -49,6 +48,9 @@ Component({
           content: value
         }
       });
+    },
+    goToWeight: function() {
+      this.triggerEvent('weight');
     },
     addReply: function() {
       this.setData({

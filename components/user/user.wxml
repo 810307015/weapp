@@ -12,6 +12,7 @@
 
 	<mp-cells ext-class="my-cells" title="">
 		<mp-cell value="意见反馈" footer=">" bindtap="toggleModal"></mp-cell>
+		<mp-cell value="体重记录" footer=">" bindtap="goToWeight"></mp-cell>
 	</mp-cells>
 
 	<view class="modal" wx-if="{{showModal}}" bindtap="toggleModal">
