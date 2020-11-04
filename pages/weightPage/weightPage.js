@@ -41,7 +41,10 @@ Page({
       });
       return;
     }
-    const time = new Date().toLocaleDateString();
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
     wx.showLoading({
       title: '新增记录中...',
     })
@@ -53,7 +56,7 @@ Page({
         data: {
           name,
           range,
-          time
+          time: `${year}-${month}-${day}`
         }
       },
       success: () => {
