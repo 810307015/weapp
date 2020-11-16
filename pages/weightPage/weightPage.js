@@ -192,6 +192,8 @@ Page({
       });
       return;
     }
+    const app = getApp();
+    const { openid } = app.globalData;
     const now = new Date();
     wx.showLoading({
       title: '新增记录中...',
@@ -204,7 +206,8 @@ Page({
         data: {
           name,
           range,
-          time: util.formatTime(now)
+          time: util.formatTime(now),
+          openid
         }
       },
       success: () => {
