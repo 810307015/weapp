@@ -4,9 +4,17 @@
 }
 
 .weight-container .header {
-  font-weight: bold;
-  font-size: 38rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
   text-align: center;
+}
+
+.weight-container .header view {
+  padding: 10rpx 24rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #EEEEEE;
 }
 
 .weight-container .row {
@@ -14,7 +22,7 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  height: 60rpx;
+  padding: 20rpx 0;
 }
 
 .weight-container .row .name {
@@ -57,4 +65,32 @@
 
 .weight-container  .modal .content button {
   margin-top: 40rpx;
+}
+
+.weight-container .operate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 50rpx;
+}
+
+.weight-container .operate view {
+  background-color: #f8f8f8;
+  border-radius: 16rpx;
+  transition: all 0.3s;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weight-container .operate .active {
+  background-color: lightblue;
+  color: #fff;
+}
+
+.weight-container .echarts-container {
+  width: 100%;
+  height: 800rpx;
 }

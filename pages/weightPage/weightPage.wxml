@@ -1,32 +1,46 @@
 <!--pages/weightPage/weightPage.wxml-->
 <view class="weight-container">
-  <view class="header">
-    体重记录
-    <text bindtap="showAdd">+</text>
-  </view>
-  <view class="row">
-    <text class="name">姓名</text>
-    <text class="range">体重区间</text>
-    <text class="time">记录时间</text>
-  </view>
-  <view class="row" wx:for="{{weightList}}" wx:for-index="idx" wx:key="idx" wx:for-item="item">
-    <text class="name">{{item.name}}</text>
-    <text class="range">{{item.range}}</text>
-    <text class="time">{{item.time}}</text>
-  </view>
-  <view class="modal" wx-if="{{showModal}}" bindtap="toggleModal">
-		<view class="content" catchtap="doNothing">
-			<mp-form id="form" models="{{formData}}">
-				<view class="form-item">
-          <view class="label">姓名</view>
-					<input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入你的姓名" />
-        </view>
-        <view class="form-item">
-          <view class="label">体重区间</view>
-					<input bindinput="formInputChange" data-field="range" class="weui-input" placeholder="请输入你的体重区间" />
-        </view>
-        <button type="primary" bindtap="addRecord">提交记录</button>
-			</mp-form>
+	<view class="header">
+		<view class="add" bindtap="showAdd">新增记录</view>
+		<view class="show" bindtap="changeShowType">
+      {{ showType === 0 ? '切换到图表' : '切换到列表' }}
+    </view>
+	</view>
+  <!-- 列表展示 -->
+	<view wx:if="{{ showType === 0 }}">
+		<view class="operate">
+			<view wx:for="{{people}}" wx:for-index="index" wx:key="index" wx:for-item="person" data-person="{{person}}" bindtap="changeShowList" class="{{currentPerson === person ? 'active' : ''}}">
+				{{ person }}
+			</view>
+		</view>
+		<view class="row">
+			<text class="name">姓名</text>
+			<text class="range">体重(kg)</text>
+			<text class="time">记录时间</text>
+		</view>
+		<view class="row" wx:for="{{showList}}" wx:for-index="idx" wx:key="idx" wx:for-item="item">
+			<text class="name">{{item.name}}</text>
+			<text class="range">{{item.range}}</text>
+			<text class="time">{{item.time}}</text>
+		</view>
+		<view class="modal" wx-if="{{showModal}}" bindtap="toggleModal">
+			<view class="content" catchtap="doNothing">
+				<mp-form id="form" models="{{formData}}">
+					<view class="form-item">
+						<view class="label">姓名</view>
+						<input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入你的姓名" />
+					</view>
+					<view class="form-item">
+						<view class="label">体重区间</view>
+						<input bindinput="formInputChange" data-field="range" class="weui-input" placeholder="请输入你的体重区间" />
+					</view>
+					<button type="primary" bindtap="addRecord">提交记录</button>
+				</mp-form>
+			</view>
 		</view>
 	</view>
+  <!-- 图表展示 -->
+  <view class="echarts-container" wx:if="{{ showType === 1 }}">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
 </view>
