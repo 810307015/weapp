@@ -17,14 +17,26 @@
   </view>
 
   <view class="content">
-    <view class="title" wx:if="{{activeIndex !== -1}}">
-      当前卦象: {{ guaList[activeIndex].name }}
+    <view class="title" wx:if="{{!!gua.name}}">
+      本卦（当前之境遇）: {{ gua.name }}
+    </view>
+    <view class="describe">
+      {{ gua.describe }}
     </view>
 
-    <view class="describe">
-      {{ guaList[activeIndex].describe }}
+    <view class="title" wx:if="{{!!huGua.name}}">
+      互卦（发展的趋势）: {{ huGua.name }}
     </view>
-      
+    <view class="describe">
+      {{ huGua.describe }}
+    </view>
+
+    <view class="title" wx:if="{{!!bianGua.name}}">
+      变卦（最终的结果）: {{ bianGua.name }}
+    </view>
+    <view class="describe">
+      {{ bianGua.describe }}
+    </view>
       
   </view>
     

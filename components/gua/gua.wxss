@@ -3,15 +3,18 @@
   flex-direction: column;
   align-items: center;
   background: #f8f8f8;
-  padding-top: 90rpx;
+  padding: 90rpx 0 200rpx;
   min-height: 1000rpx;
+}
+
+.gua .describe {
+  margin-bottom: 40rpx;
 }
 
 .gua .title {
   color: #e8525f;
   line-height: 1.5;
   font-size: 40rpx;
-  margin-bottom: 40rpx;
 }
 
 .gua .taiji {
