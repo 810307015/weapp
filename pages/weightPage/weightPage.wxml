@@ -3,13 +3,13 @@
 	<view class="header">
 		<view class="add" bindtap="showAdd">新增记录</view>
 		<view class="show" bindtap="changeShowType">
-      {{ showType === 0 ? '切换到图表' : '切换到列表' }}
-    </view>
+			{{ showType === 0 ? '切换到图表' : '切换到列表' }}
+		</view>
 	</view>
-  <!-- 列表展示 -->
+	<!-- 列表展示 -->
 	<view wx:if="{{ showType === 0 }}">
 		<view class="operate">
-			<view wx:for="{{people}}" wx:for-index="index" wx:key="index" wx:for-item="person" data-person="{{person}}" bindtap="changeShowList" class="{{currentPerson === person ? 'active' : ''}}">
+			<view wx:if="{{ people.length > 2 }}" wx:for="{{people}}" wx:for-index="index" wx:key="index" wx:for-item="person" data-person="{{person}}" bindtap="changeShowList" class="{{currentPerson === person ? 'active' : ''}}">
 				{{ person }}
 			</view>
 		</view>
@@ -23,24 +23,28 @@
 			<text class="range">{{item.range}}</text>
 			<text class="time">{{item.time}}</text>
 		</view>
-		<view class="modal" wx-if="{{showModal}}" bindtap="toggleModal">
-			<view class="content" catchtap="doNothing">
-				<mp-form id="form" models="{{formData}}">
-					<view class="form-item">
-						<view class="label">姓名</view>
-						<input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入你的姓名" />
-					</view>
-					<view class="form-item">
-						<view class="label">体重区间</view>
-						<input bindinput="formInputChange" data-field="range" class="weui-input" placeholder="请输入你的体重区间" />
-					</view>
-					<button type="primary" bindtap="addRecord">提交记录</button>
-				</mp-form>
-			</view>
+		<view class="empty" wx:if="{{ showList.length === 0 }}">暂无体重记录</view>
+	</view>
+	<!-- 图表展示 -->
+	<view  wx:if="{{ showType === 1 }}">
+		<view class="echarts-container" wx:if="{{ showList.length > 0 }}">
+			<ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 		</view>
 	</view>
-  <!-- 图表展示 -->
-  <view class="echarts-container" wx:if="{{ showType === 1 }}">
-    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
-  </view>
+
+	<view class="modal" wx-if="{{showModal}}" bindtap="toggleModal">
+		<view class="content" catchtap="doNothing">
+			<mp-form id="form" models="{{formData}}">
+				<view class="form-item">
+					<view class="label">姓名</view>
+					<input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入你的姓名" />
+				</view>
+				<view class="form-item">
+					<view class="label">体重(kg)</view>
+					<input bindinput="formInputChange" data-field="range" class="weui-input" placeholder="请输入你的体重区间" />
+				</view>
+				<button type="primary" bindtap="addRecord">提交记录</button>
+			</mp-form>
+		</view>
+	</view>
 </view>

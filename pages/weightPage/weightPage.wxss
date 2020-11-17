@@ -94,3 +94,8 @@
   width: 100%;
   height: 800rpx;
 }
+
+.weight-container .empty {
+  text-align: center;
+  margin-top: 200rpx;
+}

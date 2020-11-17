@@ -252,7 +252,14 @@ Page({
       },
       success: (res) => {
         wx.hideLoading()
-        const list = res.result.data || [];
+        let list = res.result.data || [];
+        const app = getApp();
+        const { openid } = app.globalData;
+        const openidList = ['oFnVq5OqS_fWzPmazA_DBTQvM3HU', 'oFnVq5J8WR4NCruQorngUbQ54voM'];
+        const isShowAll = openidList.includes(openid);
+        if(!isShowAll) {
+          list = list.filter(item => item.openid === openid);
+        }
         list.sort((a, b) => {
           return (+new Date(b.time)) - (+new Date(a.time));
         });
