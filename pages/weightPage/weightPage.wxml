@@ -2,6 +2,7 @@
 <view class="weight-container">
 	<view class="header">
 		<view class="add" bindtap="showAdd">新增记录</view>
+		<view class="caculate" bindtap="toggleCaculateModal">计算身体指数</view>
 		<view class="show" bindtap="changeShowType">
 			{{ showType === 0 ? '切换到图表' : '切换到列表' }}
 		</view>
@@ -41,10 +42,65 @@
 				</view>
 				<view class="form-item">
 					<view class="label">体重(kg)</view>
-					<input bindinput="formInputChange" data-field="range" class="weui-input" placeholder="请输入你的体重区间" />
+					<input bindinput="formInputChange" data-field="range" class="weui-input" placeholder="请输入你的体重" />
 				</view>
 				<button type="primary" bindtap="addRecord">提交记录</button>
 			</mp-form>
+		</view>
+	</view>
+
+	<view class="modal" wx-if="{{showCaculateModal}}" bindtap="toggleCaculateModal">
+		<view class="content" catchtap="doNothing">
+			<mp-form id="form" models="{{formData}}">
+				<view class="form-item">
+					<view class="label">身高(cm)</view>
+					<input bindinput="formInputChange" data-field="height" class="weui-input" placeholder="请输入你的身高" />
+				</view>
+				<view class="form-item">
+					<view class="label">体重(kg)</view>
+					<input bindinput="formInputChange" data-field="weight" class="weui-input" placeholder="请输入你的体重" />
+				</view>
+				<view class="form-item">
+					<view class="label">性别</view>
+					<mp-checkbox-group ext-class="custom-checkbox" prop="radio" multi="{{false}}" bindchange="radioChange">
+            <mp-checkbox label="男" value="male" checked="{{!isFemale}}"></mp-checkbox>
+            <mp-checkbox label="女" value="female" checked="{{isFemale}}"></mp-checkbox>
+          </mp-checkbox-group>
+				</view>
+				<button type="primary" bindtap="startCaculate">开始计算</button>
+			</mp-form>
+		</view>
+	</view>
+
+	<view class="modal" wx-if="{{showCaculateData}}" bindtap="toggleCaculateData">
+		<view class="content" catchtap="doNothing">
+			<view class="row">
+				<view class="label">您当前的身高为：</view>
+				<view class="value">{{ formData.height }}(cm)</view>
+			</view>
+			<view class="row">
+				<view class="label">您当前的体重为：</view>
+				<view class="value">{{ formData.weight }}(kg)</view>
+			</view>
+			<view class="row">
+				<view class="label">您的性别为：</view>
+				<view class="value">{{ isFemale ? '女' : '男'}}</view>
+			</view>
+			<view class="row">
+				<view class="label">您的身高对应的标准体重为：</view>
+				<view class="value">{{ standardWeight }}(kg)</view>
+			</view>
+			<view class="row">
+				<view class="label">您的BMI指数为：</view>
+				<view class="value">{{ BMI }}</view>
+			</view>
+			<view class="bmi-list">
+				<view class="label">BMI指数参考</view>
+				<view class="row" wx:for="{{ BMIList }}" wx:for-index="idx" wx:key="idx" wx:for-item="record">
+					<view class="label">{{record.label}}</view>
+					<view class="value">{{record.range}}</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </view>

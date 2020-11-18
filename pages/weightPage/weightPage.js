@@ -15,6 +15,12 @@ Page({
     currentPerson: '全部', // 当前选择的记录人
     showType: 0, // 0 列表展示， 1 echarts展示
     ec: {}, // echarts图的配置
+    showCaculateModal: false, // 显示计算的弹窗
+    showCaculateData: false, // 显示计算的结果
+    isFemale: false, // 是否是女性
+    standardWeight: 0, // 标准体重
+    BMI: 0, // 身体指数
+    BMIList: util.BMI_REFER, // BMI的描述
   },
 
   // 初始化echarts图的配置
@@ -150,6 +156,50 @@ Page({
     };
     chart.setOption(option);
     return chart;
+  },
+
+  // 显示填写身体素质的弹窗
+  toggleCaculateModal: function () {
+    this.setData({
+      showCaculateModal: !this.data.showCaculateModal
+    })
+  },
+
+  // 显示或隐藏最终结果
+  toggleCaculateData: function() {
+    this.setData({
+      showCaculateData: !this.data.showCaculateData
+    })
+  },
+
+  // 选择性别
+  radioChange: function(e) {
+    const gender = e.detail.value;
+    this.setData({
+      isFemale: gender === 'female'
+    })
+  },
+
+  // 计算BMI和标准体重
+  startCaculate: function() {
+    const {
+      height,
+      weight
+    } = this.data.formData;
+    if(!height || !weight) {
+      wx.showToast({
+        title: '身高体重不能为空',
+      });
+      return;
+    }
+    const standardWeight = util.getStandardWeight(height, this.data.isFemale);
+    const BMI = util.getBMI(height / 100, weight);
+    this.setData({
+      standardWeight,
+      BMI,
+      showCaculateModal: false,
+      showCaculateData: true
+    })
   },
 
   changeShowType: function () {

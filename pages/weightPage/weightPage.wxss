@@ -99,3 +99,18 @@
   text-align: center;
   margin-top: 200rpx;
 }
+
+.weight-container mp-checkbox-group {
+  flex: 1;
+}
+
+.weight-container .group--custom-checkbox {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.weight-container .bmi-list {
+  margin-top: 20rpx;
+  color: #999;
+}
