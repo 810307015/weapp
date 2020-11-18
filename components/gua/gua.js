@@ -89,10 +89,12 @@ Component({
             // 取互卦
             const hTopGua =  [ topGua.yao[1], topGua.yao[2], bottomGua.yao[0] ]; // 互卦的上卦
             const hBottomGua =  [ topGua.yao[2], bottomGua.yao[0], bottomGua.yao[1] ]; // 互卦的下卦
-            const hTopIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === hTopGua.join(',')) || 0;
-            const hBottomIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === hBottomGua.join(',')) || 0;
-            const huGua = this.data.guaList.find(gua => Number(gua.top) === GUA_MAP[hTopIndex].index && Number(gua.bottom) === GUA_MAP[hBottomIndex].index);
-
+            const hTopIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === hTopGua.join(','));
+            const hBottomIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === hBottomGua.join(','));
+            const hTop = GUA_MAP[hTopIndex].index;
+            const hBottom = GUA_MAP[hBottomIndex].index;
+            const huGua = this.data.guaList.find(gua => Number(gua.top) === Number(hTop) && Number(gua.bottom) === Number(hBottom));
+            
             // 取变卦
             let bTopGua = [...topGua.yao],
                 bBottomGua = [...bottomGua.yao],
@@ -104,9 +106,11 @@ Component({
               i = 3 - changeYao;
               bBottomGua[i] = bBottomGua[i] === 0 ? 1 : 0;
             }
-            const bTopIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === bTopGua.join(',')) || 0;
-            const bBottomIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === bBottomGua.join(',')) || 0;
-            const bianGua = this.data.guaList.find(gua => Number(gua.top) === GUA_MAP[bTopIndex].index && Number(gua.bottom) === GUA_MAP[bBottomIndex].index);
+            const bTopIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === bTopGua.join(','));
+            const bBottomIndex = GUA_MAP.findIndex(gua => gua.yao.join(',') === bBottomGua.join(','));
+            const bTop = GUA_MAP[bTopIndex].index;
+            const bBottom = GUA_MAP[bBottomIndex].index;
+            const bianGua = this.data.guaList.find(gua => Number(gua.top) === Number(bTop) && Number(gua.bottom) === Number(bBottom));
             
             this.setData({
               gua,

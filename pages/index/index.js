@@ -142,6 +142,9 @@ Page({
     })
   },
   getGuaList: function() {
+    wx.showLoading({
+      title: '数据加载中...',
+    })
     wx.cloud.callFunction({
       name: 'tableOperate',
       data: {
@@ -149,6 +152,7 @@ Page({
         cName: 'gua'
       },
       success: (res) => {
+        wx.hideLoading()
         const list = res.result.data || [];
         this.setData({
           guaList: list
