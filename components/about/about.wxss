@@ -1,0 +1,56 @@
+/* components/about/about.wxss */
+.about {
+  padding: 30rpx 30rpx 150rpx;
+}
+
+.about .photo {
+  width: 300rpx;
+  margin-right: 30rpx;
+}
+
+.about .header {
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.about .base {
+  flex: 1;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .label {
+  width: 100rpx;
+  color: #999;
+}
+
+.about .row .value {
+  flex: 1;
+  color: #333;
+}
+
+.about .record {
+  margin-top: 30rpx;
+  border: 2rpx solid #EEE;
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+
+.about .record .question {
+  font-weight: bold;
+}
+
+.about .record .question::before {
+  content: '问:';
+}
+
+.about .record .answer {
+  text-indent: 2em;
+}
+
+.bold {
+  font-weight: bold;
+}
+

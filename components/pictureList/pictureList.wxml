@@ -1,0 +1,6 @@
+<!--components/pictureList/pictureList.wxml-->
+<view class="picture-list">
+  <image wx:for="{{ list }}" wx:for-index="idx" wx:key="idx" data-index="{{idx}}" wx:for-item="src" src="{{src}}" mode="widthFix" class="picture" bindtap="handleClick" />
+  <mp-gallery show="{{show}}" img-urls="{{list}}" hide-on-click="{{true}}" showDelete="{{false}}" current="{{index}}">
+  </mp-gallery>
+</view>

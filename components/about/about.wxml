@@ -1,0 +1,62 @@
+<!--components/about/about.wxml-->
+<view class="about">
+  <official-account></official-account>
+  <view class="header">
+    <image class="photo" src="cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/hanbi.png" mode="widthFix"></image>
+    <view class="base">
+      <view class="row">
+        <view class="label">姓名</view>
+        <view class="value">铁憨憨</view>
+      </view>
+      <view class="row">
+        <view class="label">性别</view>
+        <view class="value">男</view>
+      </view>
+      <view class="row">
+        <view class="label">爱好</view>
+        <view class="value">目前正在减肥中</view>
+      </view>
+      <view class="row">
+        <view class="label">简介</view>
+        <view class="value">一个快要而立，相貌平平，心宽体胖的铁憨憨</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="record">
+      <view class="question">
+        这个小程序现在能干嘛？
+      </view>
+      <view class="answer">
+        <view>1. 生成卦象，解卦请在反馈中留下联系方式，为你排忧解难。</view>
+        <view>2. 记录体重，计算BMI，查看一段时间的体重变化曲线。</view>
+      </view>
+    </view>
+    <view class="record">
+      <view class="question">
+        这个小程序后续有什么规划?
+      </view>
+      <view class="answer">
+        <view>需要什么功能可以提反馈，有空我就加。</view>
+      </view>
+    </view>
+    <view class="record">
+      <view class="question">
+        为什么要做这个小程序
+      </view>
+      <view class="answer">
+        <view>就是感觉还比较有意思，自己需要啥就加啥，顺便体验一下小程序的云开发，学习一波技术。</view>
+      </view>
+    </view>
+    <view class="record">
+      <view class="question">
+        关联的公众号里有什么吗？
+      </view>
+      <view class="answer">
+        <view>目前还不知道写啥，不知道有没有人能给我建议，可以关注公众号：<text class="bold">行者的世界。</text></view>
+        <view>想看啥都可以跟我反馈，我可以试着写一写，不然都不知道写啥。</view>
+      </view>
+    </view>
+  </view>
+</view>

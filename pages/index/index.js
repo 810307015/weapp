@@ -6,13 +6,13 @@ Page({
   data: {
     activeTabIndex: 0, // 当前的tab页
     tabbarList: [
-      // {
-      //   'text': '笔记',
-      //   'iconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note.png',
-      //   'selectedIconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note_active.png'
-      // },
       {
-        'text': '周易',
+        'text': '关于',
+        'iconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/resume_unselected.png',
+        'selectedIconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/resume_selected.png'
+      },
+      {
+        'text': '成长',
         'iconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note.png',
         'selectedIconPath': 'cloud://xhwy-yry-gwvlb.7868-xhwy-yry-gwvlb-1302619666/images/icon_note_active.png'
       },

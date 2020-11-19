@@ -1,11 +1,12 @@
 <!--index.wxml-->
 <view class="main">
   <!-- <custom-note wx-if="{{activeTabIndex === 0}}" note-list="{{noteList}}" binddelete="onDelete"></custom-note> -->
-  <custom-zhouyi wx-if="{{activeTabIndex === 0}}" gua-list="{{guaList}}"></custom-zhouyi>
+  <!-- <custom-zhouyi wx-if="{{activeTabIndex === 0}}" gua-list="{{guaList}}"></custom-zhouyi> -->
 
-  <custom-gua wx-if="{{activeTabIndex === 1}}" gua-list="{{guaList}}"></custom-gua>
-
-  <custom-user wx-if="{{activeTabIndex === 2}}" bindadd="addReply" bindweight="goToWeight"></custom-user>
+  <custom-about wx-if="{{activeTabIndex === 0}}"></custom-about>
+  <custom-picture-list wx-if="{{activeTabIndex === 1}}"></custom-picture-list>
+  <custom-gua wx-if="{{activeTabIndex === 2}}" gua-list="{{guaList}}"></custom-gua>
+  <custom-user wx-if="{{activeTabIndex === 3}}" bindadd="addReply" bindweight="goToWeight"></custom-user>
 
   <mp-tabbar 
     ext-class="tab-bar"

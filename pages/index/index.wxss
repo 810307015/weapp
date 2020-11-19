@@ -15,6 +15,14 @@
   
 }
 
-.main .tab-bar .tabbar--weui-tabbar__item.tabbar--weui-bar__item_on:nth-child(2) .tabbar--weui-tabbar__label {
+.main .tab-bar .tabbar--weui-tabbar__item.tabbar--weui-bar__item_on:nth-child(3) .tabbar--weui-tabbar__label {
   color: #e8525f;
+}
+
+/* .main .weui-tabbar {
+  background-color: rgba(211, 211, 211, 0.5);
+} */
+
+.main .weui-tabbar::before {
+  display: none;
 }

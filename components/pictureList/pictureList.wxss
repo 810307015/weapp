@@ -1,0 +1,9 @@
+/* components/pictureList/pictureList.wxss */
+.picture-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.picture-list .picture {
+  width: 100%;
+}
