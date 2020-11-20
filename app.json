@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/weightPage/weightPage"
+    "pages/weightPage/weightPage",
+    "pages/replyList/replyList"
   ],
   "window": {
     "backgroundTextStyle": "light",

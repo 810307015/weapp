@@ -13,6 +13,7 @@
 	<mp-cells ext-class="my-cells" title="">
 		<mp-cell value="意见反馈" footer=">" bindtap="toggleModal"></mp-cell>
 		<mp-cell value="体重记录" footer=">" bindtap="goToWeight"></mp-cell>
+		<mp-cell wx:if="{{isMain}}" value="反馈记录" footer=">" bindtap="goToRelpyList"></mp-cell>
 	</mp-cells>
 
 	<view class="modal" wx-if="{{showModal}}" bindtap="toggleModal">
@@ -22,7 +23,7 @@
           <view slot="title">反馈意见</view>
 					<textarea bindinput="formInputChange" data-field="content" class="weui-input" placeholder="请输入反馈内容" />
         </view>
-        <button type="primary" bindtap="addReply">提交反馈</button>
+        <button type="primary" open-type="getUserInfo" bindgetuserinfo="addReply">提交反馈</button>
 			</mp-form>
 		</view>
 	</view>

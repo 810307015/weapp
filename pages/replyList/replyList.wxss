@@ -1,0 +1,34 @@
+/* pages/replyList/replyList.wxss */
+.reply-list {
+  padding: 30rpx;
+}
+
+.reply-list .reply-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  border-radius: 20rpx;
+  border: 2rpx solid #eee;
+}
+
+.reply-list .reply-item image {
+  width: 200rpx;
+  margin-right: 30rpx;
+}
+
+.reply-list .reply-item .base {
+  padding: 10rpx 0;
+}
+
+.reply-list .reply-item .nickName {
+  font-weight: bold;
+}
+
+.reply-list .reply-item .content {
+  color: #999;
+}
+
+.reply-list .empty {
+  text-align: center;
+  padding: 100rpx;
+}

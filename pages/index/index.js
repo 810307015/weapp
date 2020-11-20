@@ -108,10 +108,9 @@ Page({
     })
   },
   addReply: function (e) {
-    const { content = '' } = e.detail;
+    const { content = '', avatarUrl, nickName } = e.detail;
     const app = getApp();
     const { openid } = app.globalData;
-    console.log(content);
     if(!content.trim()) {
       wx.showToast({
         icon: 'none',
@@ -129,6 +128,8 @@ Page({
         cName: 'reply',
         data: {
           content,
+          avatarUrl,
+          nickName,
           timeStamp: +new Date(),
           openid
         }
@@ -163,6 +164,11 @@ Page({
   goToWeight: function() {
     wx.navigateTo({
       url: '/pages/weightPage/weightPage',
+    })
+  },
+  goToReplyList: function() {
+    wx.navigateTo({
+      url: '/pages/replyList/replyList',
     })
   },
   onLoad: function () {

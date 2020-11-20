@@ -12,6 +12,7 @@ Component({
   data: {
     showModal: false,
     showToast: false,
+    isMain: false, // 是否是管理员
     rules: [
       {
         name: 'content',
@@ -33,15 +34,15 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    doNothing: function() {
+    doNothing: function () {
       console.log('阻止事件冒泡');
     },
-    toggleModal: function() {
+    toggleModal: function () {
       this.setData({
         showModal: !this.data.showModal
       })
     },
-    formInputChange: function(e) {
+    formInputChange: function (e) {
       const value = e.detail.value;
       this.setData({
         formData: {
@@ -49,16 +50,38 @@ Component({
         }
       });
     },
-    goToWeight: function() {
+    goToWeight: function () {
       this.triggerEvent('weight');
     },
-    addReply: function() {
+    goToRelpyList: function() {
+      this.triggerEvent('replylist');
+    },
+    addReply: function (e) {
+      const { nickName, avatarUrl } = e.detail.userInfo;
+      const { content } = this.data.formData;
+      if (!content) {
+        wx.showToast({
+          title: '请提出您的建议',
+          icon: 'none'
+        });
+        return;
+      }
       this.setData({
         showModal: false
       }, () => {
-        const { content } = this.data.formData;
-        this.triggerEvent('add', { content  });
+        this.triggerEvent('add', { content, nickName, avatarUrl });
       })
+    }
+  },
+
+  lifetimes: {
+    attached: function() {
+      const app = getApp();
+      const { openid } = app.globalData;
+      console.log(openid)
+      this.setData({
+        isMain: openid === 'oFnVq5OqS_fWzPmazA_DBTQvM3HU' // 判断是不是我在看
+      });
     }
   }
 })

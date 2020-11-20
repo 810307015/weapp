@@ -1,0 +1,11 @@
+<!--pages/replyList/replyList.wxml-->
+<view class="reply-list">
+  <view wx:for="{{ replyList }}" wx:for-index="idx" wx:key="idx" wx:for-item="reply" class="reply-item">
+    <image wx:if="{{ reply.avatarUrl }}" src="{{ reply.avatarUrl }}" mode="widthFix"></image>
+    <view class="base">
+      <view class="nickName">{{ reply.nickName }}</view>
+      <view class="content">{{ reply.content }}</view>
+    </view>
+  </view>
+  <view class="empty" wx:if="{{ replyList.length === 0 && !isLoading }}">暂无反馈记录</view>
+</view>
