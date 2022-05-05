@@ -1,0 +1,52 @@
+{
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "pages/editNote/editNote",
+                    "pathName": "pages/editNote/editNote",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/weightPage/weightPage",
+                    "pathName": "pages/weightPage/weightPage",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": 1011
+                },
+                {
+                    "id": -1,
+                    "name": "pages/replyList/replyList",
+                    "pathName": "pages/replyList/replyList",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/dayQian/index",
+                    "pathName": "pages/dayQian/index",
+                    "query": "",
+                    "scene": null,
+                    "launchMode": "default"
+                }
+            ]
+        }
+    }
+}

@@ -59,6 +59,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    exchange() {
+      this.triggerEvent('exchange', { index: 0 })
+    },
     start: function() {
       this.setData({
         isActive: !this.data.isActive

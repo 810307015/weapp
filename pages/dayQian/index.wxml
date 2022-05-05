@@ -1,0 +1,4 @@
+<view class="qian">
+  <canvas type="2d" id="myCanvas" bindlongpress="longtapHandler"></canvas>
+</view>
+  

@@ -1,0 +1,30 @@
+<view class="gua-new">
+  <view class="header">摇一摇起卦</view>
+  <view class="box">
+    <view class="item" style="{{styles[0]}}">
+      <view class="front bg"></view>
+      <view class="back bg"></view>
+    </view>
+    <view class="item" style="{{styles[1]}}">
+      <view class="front bg"></view>
+      <view class="back bg"></view>
+    </view>
+    <view class="item" style="{{styles[2]}}">
+      <view class="front bg"></view>
+      <view class="back bg"></view>
+    </view>
+  </view>
+  <view class="gua-list" wx:if="{{guaShowList.length === 0}}">
+    <view class="gua-origin">
+      <view wx:for="{{guaOrigin}}" wx:for-index="idx" wx:key="idx" wx:for-item="yao" class="{{ yao === 1 ? 'yang' : 'yin' }}"></view>
+    </view>
+  </view>
+  <view class="gua-box">
+    <view class="gua-info" wx:if="{{guaShowList.length}}" wx:for="{{guaShowList}}" wx:for-item="currentGua" wx:for-index="idx" wx:for-key="{{idx}}">
+      <view class="gua-name">{{currentGua.label}}：{{ currentGua.name }}</view>
+      <view class="gua-describe">象辞：{{ currentGua.describe }}</view>
+      <view class="gua-describe" wx:if="{{ currentGua.mark }}">注解：{{ currentGua.mark }}</view>
+    </view>
+  </view>
+  <view class="fixed-bottom" wx:if="{{guaShowList.length}}">如有感兴趣的朋友，可加微信号bat_10001一对一解卦</view>
+</view>

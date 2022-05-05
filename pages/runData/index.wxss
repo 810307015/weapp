@@ -1,0 +1,19 @@
+/* pages/runData/index.wxss */
+.run-data .echarts-container {
+  width: 100%;
+  height: 800rpx;
+}
+
+.run-data .title {
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #07c160;
+}
+
+.run-data .get-data {
+  color: red;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 40rpx;
+}

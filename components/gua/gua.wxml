@@ -1,5 +1,6 @@
 <!--components/gua/gua.wxml-->
 <view class="gua">
+  <a class="fixed-btn" bindtap="exchange">{{ '<<' }}每日一签</a>
   <view class="title">点击八卦开始起卦，再次点击停止</view>
   <view class="taiji {{isActive ? 'animate-rotate' : ''}}" bindtap="start">
     <view class="yin">

@@ -7,6 +7,8 @@
     "custom-gua": "/components/gua/gua",
     "custom-zhouyi": "/components/zhouyi/zhouyi",
     "custom-picture-list": "/components/pictureList/pictureList",
-    "custom-about": "/components/about/about"
+    "custom-about": "/components/about/about",
+    "custom-qian": "/components/qian/qian",
+    "custom-gua-new": "/components/gua-new/index"
   }
 }

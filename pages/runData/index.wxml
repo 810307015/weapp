@@ -1,0 +1,13 @@
+<view class="run-data">
+  <view wx:if="{{failed}}" class="get-data" bindtap="init">
+    获取失败，重新获取
+  </view>
+    
+  <view class="title">
+    快看看你30天的运动步数吧!
+  </view>
+    
+  <view class="echarts-container" wx:if="{{ runList.length > 0 }}">
+    <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view>
+</view>

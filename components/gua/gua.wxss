@@ -96,3 +96,8 @@
   line-height: 1.5;
 }
 
+.gua .fixed-btn {
+  position: fixed;
+  top: 30rpx;
+  left: 30rpx;
+}

@@ -58,9 +58,44 @@ const BMI_REFER = [
   }
 ];
 
+const shake = () => {
+  return new Promise((resolve, reject) => {
+    wx.startGyroscope({
+      success: (res) => {
+        let temp = { x: "0", y: "0", z: "0" };
+        let count = 0,
+          time = 0;
+        wx.onGyroscopeChange((e) => {
+          if (temp === null) {
+            temp = e;
+          }
+          if (Math.abs(temp.x - e.x) > 1.5) {
+            time += 1;
+          }
+          if (Math.abs(temp.y - e.y) > 1.5) {
+            time += 1;
+          }
+          if (Math.abs(temp.z - e.z) > 1.5) {
+            time += 1;
+          }
+          count += 1;
+          temp = e;
+          if (count >= 3 && time >= 9) {
+            wx.vibrateShort();
+            wx.offGyroscopeChange();
+            wx.stopGyroscope();
+            resolve();
+          }
+        });
+      },
+    });
+  })
+}
+
 module.exports = {
-  formatTime: formatTime,
+  formatTime,
   getStandardWeight,
   getBMI,
+  shake,
   BMI_REFER
 }

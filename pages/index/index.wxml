@@ -2,15 +2,41 @@
 <view class="main">
   <!-- <custom-note wx-if="{{activeTabIndex === 0}}" note-list="{{noteList}}" binddelete="onDelete"></custom-note> -->
   <!-- <custom-zhouyi wx-if="{{activeTabIndex === 0}}" gua-list="{{guaList}}"></custom-zhouyi> -->
+  <view class="btn-group">
+    <view class="btn {{ activeIndex === 0 ? 'animaiton' : '' }}" bindtap="goToDayQian">
+      每日一签
+    </view>
+    <view class="btn {{ activeIndex === 1 ? 'animaiton' : '' }}" bindtap="goToGua">
+      摇一摇起卦
+    </view>
+    <view class="btn {{ activeIndex === 2 ? 'animaiton' : '' }}" bindtap="goToRunData">
+      运动记录
+    </view>
+    <view class="btn {{ activeIndex === 3 ? 'animaiton' : '' }}" bindtap="goToPicture">
+      拼图猫
+    </view>
+      
+  </view>
+    
+  
+  
+    
+  <!-- <view wx:else>
+    <view hidden="{{activeTabIndex !== 0}}">
+      <custom-qian  qian-list="{{qianList}}" bindexchange="exchangeTab"></custom-qian>
+    </view>
 
-  <custom-about wx-if="{{activeTabIndex === 0}}"></custom-about>
-  <custom-picture-list wx-if="{{activeTabIndex === 1}}"></custom-picture-list>
+    <view hidden="{{activeTabIndex !== 1}}">
+      <custom-gua-new  gua-list="{{guaList}}" bindexchange="exchangeTab"></custom-gua-new>
+    </view>
+  </view> -->
+  <!-- <custom-picture-list wx-if="{{activeTabIndex === 1}}"></custom-picture-list>
   <custom-gua wx-if="{{activeTabIndex === 2}}" gua-list="{{guaList}}"></custom-gua>
-  <custom-user wx-if="{{activeTabIndex === 3}}" bindadd="addReply" bindweight="goToWeight" bindreplylist="goToReplyList"></custom-user>
+  <custom-user wx-if="{{activeTabIndex === 3}}" bindadd="addReply" bindweight="goToWeight" bindreplylist="goToReplyList"></custom-user> -->
 
-  <mp-tabbar 
+  <!-- <mp-tabbar 
     ext-class="tab-bar"
     list="{{tabbarList}}" 
     bindchange="tabbarChange">
-  </mp-tabbar>
+  </mp-tabbar> -->
 </view>

@@ -26,3 +26,90 @@
 .main .weui-tabbar::before {
   display: none;
 }
+
+.main .static image {
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/main.jpeg?sign=2a6f101d9abef563d14af34cc54caf30&t=1650784161) center / cover no-repeat;
+}
+
+.main .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100rpx 40rpx 0;
+}
+
+.main .btn-group .btn {
+  display: flex;
+  width: 280rpx;
+  height: 280rpx;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24rpx;
+  margin-bottom: 40rpx;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform-origin: bottom;
+}
+
+.main .animaiton {
+  animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+  0%, 50%, 100% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  75% {
+    transform: rotateZ(5deg);
+  }
+}
+
+.main .btn-group .btn:nth-child(even) {
+  margin-top: 40rpx;
+}
+
+.main .btn-group .btn:nth-child(1) {
+  background-image: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-1.png?sign=58f08f6c7c4f03574775608fdaacba26&t=1650786885);
+}
+
+.main .btn-group .btn:nth-child(1) {
+  background-image: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-1.png?sign=58f08f6c7c4f03574775608fdaacba26&t=1650786885);
+}
+.main .btn-group .btn:nth-child(2) {
+  background-image: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-2.png?sign=48e889d45dfa0a00ce0ab23a51618bc5&t=1650786906);
+}
+.main .btn-group .btn:nth-child(3) {
+  background-image: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-3.png?sign=1750831cd7825bd4e5bb243c987f67c7&t=1650786921);
+}
+.main .btn-group .btn:nth-child(4) {
+  background-image: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-5.png?sign=b4c864ef30b0c42e1d7d2694bec9ccda&t=1650786936);
+}
+.main .btn-group .btn:nth-child(5) {
+  background-image: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-6.png?sign=c94d83a9fba8a1ee3e0d08647cfb8d80&t=1650786950);
+}
+.main .btn-group .btn:nth-child(6) {
+  background-image: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-9.png?sign=a6dbcda2772f4cf202212057078c41a4&t=1650786972);
+}
+/* 
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-1.png?sign=58f08f6c7c4f03574775608fdaacba26&t=1650786885
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-2.png?sign=48e889d45dfa0a00ce0ab23a51618bc5&t=1650786906
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-3.png?sign=1750831cd7825bd4e5bb243c987f67c7&t=1650786921
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-5.png?sign=b4c864ef30b0c42e1d7d2694bec9ccda&t=1650786936
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-6.png?sign=c94d83a9fba8a1ee3e0d08647cfb8d80&t=1650786950
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-7.png?sign=038cbc8ab1a22901761d50b6fde16972&t=1650786962
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-9.png?sign=a6dbcda2772f4cf202212057078c41a4&t=1650786972
+https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/star-10.png?sign=5cb9108dc4444863b8926cfa6f969cd9&t=1650786981
+*/

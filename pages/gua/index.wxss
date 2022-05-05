@@ -1,0 +1,120 @@
+/* pages/gua/index.wxss */
+.gua-new {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  background: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/Tuesday.png?sign=7e1a6b684b20cb5d3aa97e30ccf63a32&t=1650650284) center / 100% 100% no-repeat;
+}
+
+.gua-new .box {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 300rpx;
+  transform-style: preserve-3d;
+}
+.gua-new .box .item {
+  position: relative;
+  width: 180rpx;
+  height: 180rpx;
+  transform-style: preserve-3d;
+}
+.gua-new .box .item .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.gua-new .box .item .front {
+  background: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/coin-front.png?sign=01f2bce2d9c9e28faf1e173057a5cd75&t=1650650160) center / 100% 100% no-repeat;
+}
+.gua-new .box .item .back {
+  background: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/coin-back.png?sign=248bda962b81132fd719d07300459737&t=1650650180) center / 100% 100% no-repeat;
+  transform: translateZ(-1px);
+}
+
+.gua-new .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 36rpx;
+  height: 100rpx;
+}
+
+.gua-new .fix-top {
+  position: fixed;
+  top: 40rpx;
+  left: 40rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.gua-new .gua-list {
+  padding: 40rpx;
+  margin-top: 100rpx;
+}
+
+.gua-new .gua-origin {
+  width: 160rpx;
+  margin: 0 auto;
+}
+
+.gua-new .yin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 160rpx;
+  height: 6rpx;
+  margin-bottom: 20rpx;
+}
+
+.gua-new .yin::before,
+.gua-new .yin::after {
+  content: '';
+  display: block;
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #fff;
+}
+
+.gua-new .yang {
+  width: 160rpx;
+  height: 6rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.gua-new .gua-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  padding: 0 60rpx;
+  margin-bottom: 40rpx;
+}
+
+.gua-new .gua-info .gua-name {
+  font-size: 40rpx;
+}
+
+.gua-new .gua-info .gua-describe {
+  font-size: 30rpx;
+  margin-top: 16rpx;
+}
+.gua-new .gua-box {
+  padding: 40rpx 0;
+}
+
+.gua-new .fixed-bottom {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+}

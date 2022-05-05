@@ -1,0 +1,18 @@
+/* pages/dayQian/index.wxss */
+.qian .loading {
+  /* background: url(https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/images/Thursday.png?sign=6208a1f90f96597758ae821c8f4d50cc&t=1650639287) center / 100% 100% no-repeat; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qian .loading image {
+  width: 50vw;
+}
+
+.qian canvas {
+  width: 100vw;
+  height: 100vh;
+}

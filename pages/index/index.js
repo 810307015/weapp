@@ -29,6 +29,8 @@ Page({
     ],
     noteList: [],
     guaList: [], // 卦象列表
+    qianList: [],
+    activeIndex: 0, // 当前开启动画的按钮
   },
   tabbarChange: function (e) {
     const {
@@ -72,7 +74,22 @@ Page({
       }
     })
   },
-  getList: function () {
+  getQianList: function() {
+    wx.cloud.callFunction({
+      name: 'tableOperate',
+      data: {
+        type: 'getAll',
+        cName: 'qian'
+      },
+      success: (res) => {
+        const list = res.result.data || [];
+        this.setData({
+          qianList: list
+        });
+      }
+    })
+  },
+  getNoteList: function () {
     const app = getApp();
     const { openid } = app.globalData;
     wx.cloud.callFunction({
@@ -161,9 +178,30 @@ Page({
       }
     })
   },
+  goToRunData: function() {
+    wx.navigateTo({
+      url: '/pages/runData/index',
+    })
+  },
   goToWeight: function() {
     wx.navigateTo({
       url: '/pages/weightPage/weightPage',
+    })
+  },
+  goToDayQian() {
+    wx.navigateTo({
+      url: '/pages/dayQian/index',
+    })
+  },
+  goToGua() {
+    wx.navigateTo({
+      url: '/pages/gua/index',
+    })
+  },
+  goToPicture() {
+    wx.navigateToMiniProgram({
+      appId: 'wxfc465347491aba58',
+      path: '/pages/index/index'
     })
   },
   goToReplyList: function() {
@@ -171,12 +209,29 @@ Page({
       url: '/pages/replyList/replyList',
     })
   },
+  exchangeTab(e) {
+    this.setData({
+      activeTabIndex: e.detail.index
+    });
+  },
+  autoChangeIndex() {
+    setTimeout(() => {
+      let index = this.data.activeIndex + 1;
+      if(index > 3) {
+        index = 0;
+      }
+      this.setData({
+        activeIndex: index
+      })
+      this.autoChangeIndex();
+    }, 1200)
+  },
   onLoad: function () {
-    this.getGuaList();
     wx.showShareMenu({
       withShareTicket: true,
       menus: ['shareAppMessage', 'shareTimeline']
     })
+    this.autoChangeIndex();
   },
   onShow: function() {
     const app = getApp();
@@ -187,11 +242,8 @@ Page({
           const { appid, openid } = res.result;
           app.globalData.appid = appid;
           app.globalData.openid = openid;
-          this.getList();
         }
       })
-    } else {
-      this.getList();
     }
   }
 })

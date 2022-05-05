@@ -1,18 +1,21 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/weightPage/weightPage",
-    "pages/replyList/replyList"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "鸣易",
-    "navigationBarTextStyle": "black"
-  },
-  "useExtendedLib": {
-    "weui": true
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/index/index",
+        "pages/weightPage/weightPage",
+        "pages/replyList/replyList",
+        "pages/dayQian/index",
+        "pages/gua/index",
+        "pages/runData/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "鸣易",
+        "navigationBarTextStyle": "black"
+    },
+    "useExtendedLib": {
+        "weui": true
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }
