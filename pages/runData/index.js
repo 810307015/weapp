@@ -10,6 +10,7 @@ Page({
     runList: [],
     ec: {}, // echarts图的配置
     failed: false, // 获取失败
+    activeTab: 0,
   },
 
   // 初始化echarts图的配置
@@ -24,7 +25,7 @@ Page({
     const xAxisData = list.map(item => item.label);
     const yAxisData = list.map(item => item.value);
     const option = {
-      color: ["#5BE2D4", "#7FC73A", "#0694F3"],
+      color: [ "#7FC73A","#5BE2D4", "#0694F3"],
       grid: {
         top: 45,
         left: 50,
@@ -106,7 +107,17 @@ Page({
     return chart;
   },
 
+  exChangeTab(e) {
+    const index = +e.target.dataset.index;
+    this.setData({
+      activeTab: index
+    });
+  },
+
   init() {
+    wx.showLoading({
+      title: '运动数据加载中...',
+    })
     wx.getWeRunData({
         success: (res) => {
             const cloudID = res.cloudID;
@@ -128,11 +139,13 @@ Page({
                         },
                         failed: false
                     })
+                    wx.hideLoading();
                 },
                 error: () => {
                     this.setData({
                         failed: true
                     });
+                    wx.hideLoading();
                 }
             })
         },

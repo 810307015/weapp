@@ -4,11 +4,47 @@
   height: 800rpx;
 }
 
-.run-data .title {
-  font-size: 32rpx;
-  text-align: center;
-  line-height: 80rpx;
-  color: #07c160;
+.run-data .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.run-data .tab-item {
+  color: #333;
+  padding: 0 24rpx;
+}
+
+.run-data .tab-item.active {
+  color: #7FC73A;
+  font-size: 40rpx;
+}
+
+.run-data .list {
+  margin: 60rpx;
+  border: 2rpx solid #7FC73A;
+  border-radius: 4rpx;
+}
+
+.run-data .row {
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #7FC73A;
+  padding: 0 60rpx;
+  
+}
+
+.run-data .label {
+  font-weight: 500;
+  width: 200rpx;
+  border-right: 2rpx solid #7FC73A;
+  color: #999;
+}
+
+.run-data .value {
+  color: goldenrod;
 }
 
 .run-data .get-data {

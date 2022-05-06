@@ -1,6 +1,8 @@
 // pages/dayQian/index.js
 import { formatTime, shake } from '../../utils/util';
 
+const LIST_SIZE = 57;
+
 Page({
   /**
    * 页面的初始数据
@@ -20,29 +22,24 @@ Page({
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/036283c7018fcac1fa351abbde0d6723.jpeg?sign=9a4fcc8769c2c09551e04ae7094516ce&t=1651741003',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/0611d077ab57c4539892529ea8ea6334.jpeg?sign=0fe3ad6c40754b9be500458b66609e80&t=1651741017',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/244accbe08f6c3742b6f01f9be605c8b.jpeg?sign=402284dd6caf9062a987cbe40242e3b7&t=1651741028',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/24faa806dc74c7ab96354a8ed5dd6ae6.jpeg?sign=55d42a2b947dfd4d54b88d9f001f6b99&t=1651741038',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/2cffab009471e77725f9fa7639f7a8ed.jpeg?sign=7af2e3be6cce15916449bfa19fa589f1&t=1651741048',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/32bf9a4a3b478d64e1e68a2e65dbbc1d.jpeg?sign=61ab12804ece38e8a1542f4b3dcff0aa&t=1651741058',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/3344792e5f719ab249686181cca26f45.jpeg?sign=6f3e3715bf0485ca597aefecc8f80b56&t=1651741067',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/33b8fdf8fc08b7980cdfb49096ae0885.jpeg?sign=33a9b29b0a95b874129ea2a0ac1e7afd&t=1651741082',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/3af47cdbab3a1018131bd86ba3390948.jpeg?sign=03695f41382ea2f00d3a2bea65c62cd8&t=1651741097',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/3fd1b112ebaeab0e324ee1a3a7d49b1d.jpeg?sign=7e0fb75fc351096399415d38d3b667aa&t=1651741107',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/421a0914492c34581ec1960c714045a2.jpeg?sign=d840b2cdbcd393c224a40d26673a6a61&t=1651741118',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/422eded62ae412976ce40b9048a8aa5a.jpeg?sign=49c2ff755f434f64c092a40747cb8a0a&t=1651741138',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/4330932e758c75106dcf701a5757be1e.jpeg?sign=7c78c54551ca25b69434ed6d0f0b9476&t=1651741157',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/443ab9ae4dc41bee70a1e05261fa1385.jpeg?sign=7626d8686255d6ba0b2341a561171f6a&t=1651741165',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/4ed7083118433f6e8a43a2303f87b17b.jpeg?sign=abe9034f1016f86273d71e0ac967cd8c&t=1651741173',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/505cccce0ac4786fd91be1cc847ba7f7.jpeg?sign=3300e70eb1c9eda22660191b2f9c30a1&t=1651741182',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/54d77860b1dd42a0542360ba4b961b95.jpeg?sign=db980b7518370003e9f7477d2485b737&t=1651741194',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/60284115d9021c8634b55e142f5e55ed.jpeg?sign=df8443a200b37b231ba442e3f9c98746&t=1651741207',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/612795d82cf5a582f64ebc0ab7664771.jpeg?sign=bd71b6622d8c701184c381ab48a3500c&t=1651741224',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/6d534ac4e4b9b8a1a7a8480ab4f162f7.jpeg?sign=e6a130048ed7de3dfc346c1de6587739&t=1651741234',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/6f87840842fe8f065c0af0e105b06fad.jpeg?sign=ede12dc85e9d611ff884fb38f6a60ef7&t=1651741247',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/7113fb6d79c11d8c8844cdb7b0981866.jpeg?sign=c4f6c800be3960478bb159516b694d51&t=1651741255',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/71cf8874b1c366113631a1f3073b025f.jpeg?sign=123141e70f89f0d59eb6e83410fb26b1&t=1651741266',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/7227a3431c308a1ec48fc0eebd13405c.jpeg?sign=0f04ab6f605c129818d0db50c15b647d&t=1651741275',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/72f86d408e47dec376c2e951190b7933.jpeg?sign=ee18b88d530285bafdf7da1fab856d93&t=1651741284',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/7420bd7f1a2b9e7d0fefb005071407c9.jpeg?sign=99d51a6926327bc2a0f9fcbd80b1b4d4&t=1651741292',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/7a365fd7e22ad5a05f36663a3da18b69.jpeg?sign=672c380a1b8cd7d4a3d9b8679b92aa1b&t=1651741305',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/7caf417dd06c2f432a839af35123f916.jpeg?sign=f316499b80eae758b1eb6c28fce19e16&t=1651741314',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/7e5661aaf7066b56b93e4ebb656ad40e.jpeg?sign=34389cb90f00dbbffe6c318e00fb6af1&t=1651741330',
@@ -53,8 +50,6 @@ Page({
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/94151e23a698b8ef5a0c37dab88097eb.jpeg?sign=c27721aa130da18edf2074c44e633703&t=1651741400',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/96110bfb2068dc7c809420ebcbcee074.jpeg?sign=c13c197c5776910b144288f07064efca&t=1651741409',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/a153c0e4fc1f45b96ee983a2366794f8.jpeg?sign=70422e212477a8e0eff1aa3a31279412&t=1651741594',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/a226e7b69f90ca584841e468d23387f6.jpeg?sign=b971003e6be0692e2d5cf6a8170d2514&t=1651741610',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/a8a2a4b2101e1dba48d17d66ba120399.jpeg?sign=925320f4fe5ce2d3b868572c25ba190f&t=1651741620',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/ad4f8dc19e2cf98afb01ca90527d71e9.jpeg?sign=ce340238a5a954fab5759c46dabc6c44&t=1651741630',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/ada5c5d327f7be69786ba201b3eea2b2.jpeg?sign=6e991de7454b89d276515a5533219b08&t=1651741642',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/ae6d2c5b978a35830179eadc16871c9e.jpeg?sign=994e4ec1fae5be880fee5ae15340593a&t=1651741652',
@@ -63,7 +58,6 @@ Page({
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/b595b39e1e2ff3e28eeccaf7bee05618.jpeg?sign=ad6b186db1db812eea9fdcbe2e4b9f8b&t=1651741688',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/b8f6715cb8a67f807e5146aedd8870ec.jpeg?sign=5ad64b27003d174d82c9633635f0c60e&t=1651741700',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/bfc8dfd74b5e996cfbece50d27b84989.jpeg?sign=dd0ae9c240df49b9abcf8034b05a69eb&t=1651742276',
-      'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/bfda1d6e405072477143b24c8696a6cd.jpeg?sign=f033f1dc45623b5f589636db661c1ffc&t=1651741716',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/c22bf9069288b04cdbddadd93a413e9d.jpeg?sign=45b34b8537af845ded7fc7ceef3a4557&t=1651741727',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/c4ba5db055cd1eba4d55e30dc1a00630.jpeg?sign=ec51255030a436fddb3bfd4170f86e8a&t=1651741740',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/c9e7bc016e86b15263435bfcadcf3dc6.jpeg?sign=0d850ec86b3ecc4791001b81b60d28bb&t=1651741754',
@@ -81,14 +75,14 @@ Page({
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/f9f85fad5f3ab70cf4119adc2289f12a.jpeg?sign=08219ced652fb3c9f277bb6c6fb3ac63&t=1651741875',
       'https://7868-xhwy-yry-gwvlb-1302619666.tcb.qcloud.la/dayRecord/fb2b9c0d69fc294c82c25f340e1ac86d.jpeg?sign=eb6001a40212a7f3923184536b120c9b&t=1651741883'
     ],
-    curr: new Array(66).fill(0).map((_, index) => index),
+    curr: new Array(LIST_SIZE).fill(0).map((_, index) => index),
   },
   // 随机一张背景图
   randomBg() {
     const len = this.data.curr.length;
     if(len < 10) {
       this.setData({
-        curr: new Array(66).fill(0).map((_, index) => index)
+        curr: new Array(LIST_SIZE).fill(0).map((_, index) => index)
       });
     }
     const i = Math.floor(Math.random() * len);

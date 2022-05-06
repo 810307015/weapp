@@ -3,11 +3,39 @@
     获取失败，重新获取
   </view>
     
-  <view class="title">
-    快看看你30天的运动步数吧!
+  <view class="header">
+    <view class="tab-item {{ activeTab === 0 ? 'active' : '' }}" data-index="0" bindtap="exChangeTab">
+      列表展示
+    </view>
+    <view class="tab-item {{ activeTab === 1 ? 'active' : '' }}" data-index="1" bindtap="exChangeTab">
+      图表展示
+    </view>
+  </view>
+
+  <view class="list" wx:if="{{ activeTab === 0 }}">
+    <view class="row">
+      <view class="label">
+        日期
+      </view>
+      <view class="value">
+        步数
+      </view>
+        
+    </view>
+    <view class="row" wx:for="{{runList}}" wx:for-item="data">
+      <view class="label">
+        {{ data.label }}
+      </view>
+      <view class="value">
+        {{ data.value }}
+      </view>
+        
+    </view>
+      
   </view>
     
-  <view class="echarts-container" wx:if="{{ runList.length > 0 }}">
+    
+  <view class="echarts-container" wx:if="{{ runList.length > 0 && activeTab === 1 }}">
     <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
   </view>
 </view>
